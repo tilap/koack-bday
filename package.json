@@ -5,6 +5,9 @@
   "description": "Koack basic sample app",
   "keywords": [],
   "author": "Julien Tilap LA VINH <jlavinh@gmail.com>",
+  "contributors": [
+    "Christophe Hurpeau <christophe@hurpeau.com> (https://christophe.hurpeau.com)"
+  ],
   "license": "MIT",
   "repository": "git@bitbucket.com:tilap/bdaytimer.git",
   "homepage": "https://bitbucket.com/tilap/bdaytimer",
