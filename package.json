@@ -35,5 +35,8 @@
     "pob-babel": "^12.5.0",
     "pob-release": "^2.3.0",
     "tcomb-forked": "^3.4.0"
+  },
+  "dependencies": {
+    "koack": "^0.0.1"
   }
 }
