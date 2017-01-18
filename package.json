@@ -37,6 +37,7 @@
     "komet-karma": "^0.2.3",
     "pob-babel": "^12.5.0",
     "pob-release": "^2.3.0",
+    "springbokjs-daemon": "^1.5.0",
     "tcomb-forked": "^3.4.0"
   },
   "dependencies": {

@@ -2082,7 +2082,7 @@ nightingale-console-output@^1.2.0:
   dependencies:
     nightingale-levels "^1.0.0"
 
-nightingale-console@^2.1.0, nightingale-console@^2.2.0:
+"nightingale-console@^1.1.0 || ^2.2.0", nightingale-console@^2.1.0, nightingale-console@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/nightingale-console/-/nightingale-console-2.2.0.tgz#ea24ae47aea99e48c4beb508c03040a5c88f08a9"
   dependencies:
@@ -2112,13 +2112,13 @@ nightingale-levels@^1.0.0, nightingale-levels@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/nightingale-levels/-/nightingale-levels-1.1.0.tgz#d20cd00d050f557e1c29026fd75ec5b9a9752af3"
 
-nightingale-logger@^3.0.0-beta.1, nightingale-logger@^3.1.0, nightingale-logger@^3.1.1:
+"nightingale-logger@^1.6.0 || ^3.0.0-beta.1", nightingale-logger@^3.0.0-beta.1, nightingale-logger@^3.1.0, nightingale-logger@^3.1.1:
   version "3.1.1"
   resolved "https://registry.yarnpkg.com/nightingale-logger/-/nightingale-logger-3.1.1.tgz#49c5716a2b0b957407cee56907686f32c70a6e88"
   dependencies:
     nightingale-levels "^1.1.0"
 
-nightingale@^6.0.0, nightingale@^6.0.1:
+"nightingale@^4.6.0 || ^5.0.0 || ^6.0.0-beta.1", nightingale@^6.0.0, nightingale@^6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/nightingale/-/nightingale-6.0.1.tgz#13c854e9bb006aef34f5d109246162903ad51f0e"
   dependencies:
@@ -2649,6 +2649,14 @@ spawn-sync@^1.0.15:
   dependencies:
     concat-stream "^1.4.7"
     os-shim "^0.1.2"
+
+springbokjs-daemon@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/springbokjs-daemon/-/springbokjs-daemon-1.5.0.tgz#834237ce104a136ad00c1353bf47c110d6301c9d"
+  dependencies:
+    nightingale "^4.6.0 || ^5.0.0 || ^6.0.0-beta.1"
+    nightingale-console "^1.1.0 || ^2.2.0"
+    nightingale-logger "^1.6.0 || ^3.0.0-beta.1"
 
 sprintf-js@~1.0.2:
   version "1.0.3"
