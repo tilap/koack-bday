@@ -1,4 +1,4 @@
 'use strict';
 
-console.log('Hello world');
+require('./pool');
 //# sourceMappingURL=index.js.map

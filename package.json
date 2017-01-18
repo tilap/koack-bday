@@ -23,7 +23,8 @@
     "preversion": "npm run lint && npm run build && pob-repository-check-clean",
     "release": "pob-repository-check-clean && pob-release",
     "version": "pob-version",
-    "watch": "pob-watch"
+    "watch": "pob-watch",
+    "watch-server": "export $(cat .env | xargs) && node ./watch.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
