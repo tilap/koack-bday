@@ -16,7 +16,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 
 const loggerMiddleware = ({ event }) => console.log(event);
 
-exports.default = function bot(bot) {
+exports.default = bot => {
   bot.on(_bot.RTM_EVENTS.CHANNEL_JOINED, loggerMiddleware, ctx => console.log(ctx), (() => {
     var _ref = _asyncToGenerator(function* (ctx) {
       return Promise.resolve(console.log(ctx));
@@ -36,7 +36,7 @@ exports.default = function bot(bot) {
           const firstName = yield waitResponse();
           say('And your last name ?');
           const lastName = yield waitResponse();
-          say(`Hello ${ firstName } ${ lastName }`);
+          say(`Hello ${firstName} ${lastName}`);
         });
 
         return function (_x2, _x3) {

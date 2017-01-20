@@ -19,14 +19,7 @@ console.log(bdaytimer);
 
 ### Development
 
-Start the run watcher
-
-```
-node watch.js
-```
-
-Watch source to build on change
-
+Start the run watcher, sources to build and restart server
 
 ```
 yarn watch

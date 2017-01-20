@@ -14,8 +14,6 @@ var _messageRouter = require('koack/message-router');
 
 var _messageRouter2 = _interopRequireDefault(_messageRouter);
 
-var _types = require('koack/types');
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, arguments); return new Promise(function (resolve, reject) { function step(key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { return Promise.resolve(value).then(function (value) { step("next", value); }, function (err) { step("throw", err); }); } } return step("next"); }); }; }
@@ -23,7 +21,7 @@ function _asyncToGenerator(fn) { return function () { var gen = fn.apply(this, a
 const loggerMiddleware = ({ event }) => console.log(event);
 
 exports.default = function bot(bot) {
-  _assert(bot, _types.Bot, 'bot');
+  _assert(bot, _bot.Bot, 'bot');
 
   bot.on(_bot.RTM_EVENTS.CHANNEL_JOINED, loggerMiddleware, ctx => console.log(ctx), (() => {
     var _ref = _asyncToGenerator(function* (ctx) {
@@ -44,7 +42,7 @@ exports.default = function bot(bot) {
           const firstName = yield waitResponse();
           say('And your last name ?');
           const lastName = yield waitResponse();
-          say(`Hello ${ firstName } ${ lastName }`);
+          say(`Hello ${firstName} ${lastName}`);
         });
 
         return function (_x2, _x3) {
@@ -58,18 +56,18 @@ exports.default = function bot(bot) {
 };
 
 function _assert(x, type, name) {
-  function message() {
-    return 'Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')';
+  if (false) {
+    _tcombForked2.default.fail = function (message) {
+      console.warn(message);
+    };
   }
 
-  if (_tcombForked2.default.isType(type)) {
+  if (_tcombForked2.default.isType(type) && type.meta.kind !== 'struct') {
     if (!type.is(x)) {
       type(x, [name + ': ' + _tcombForked2.default.getTypeName(type)]);
-
-      _tcombForked2.default.fail(message());
     }
   } else if (!(x instanceof type)) {
-    _tcombForked2.default.fail(message());
+    _tcombForked2.default.fail('Invalid value ' + _tcombForked2.default.stringify(x) + ' supplied to ' + name + ' (expected a ' + _tcombForked2.default.getTypeName(type) + ')');
   }
 
   return x;

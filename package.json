@@ -23,25 +23,24 @@
     "preversion": "npm run lint && npm run build && pob-repository-check-clean",
     "release": "pob-repository-check-clean && pob-release",
     "version": "pob-version",
-    "watch": "pob-watch",
-    "watch-server": "export $(cat .env | xargs) && node ./watch.js"
+    "watch": "export $(cat .env | xargs) && node ./watch.js"
   },
   "devDependencies": {
     "babel-eslint": "^7.0.0",
     "babel-preset-es2015-node6": "^0.4.0",
-    "eslint": "^3.10.2",
-    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint": "^3.13.1",
+    "eslint-config-airbnb-base": "^11.0.1",
     "eslint-config-pob": "^10.0.1",
-    "eslint-plugin-babel": "^4.0.0",
+    "eslint-plugin-babel": "^4.0.1",
     "eslint-plugin-import": "^2.2.0",
     "komet": "^0.1.4",
     "komet-karma": "^0.2.3",
-    "pob-babel": "^12.5.0",
-    "pob-release": "^2.3.0",
+    "pob-babel": "^13.0.1",
+    "pob-release": "^3.0.0",
     "springbokjs-daemon": "^1.5.0",
-    "tcomb-forked": "^3.4.0"
+    "tcomb-forked": "^3.5.0"
   },
   "dependencies": {
-    "koack": "^0.0.1"
+    "koack": "^0.0.3"
   }
 }

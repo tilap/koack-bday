@@ -1,6 +1,6 @@
-import { RTM_EVENTS } from 'koack/bot';
-import messageRouter from 'koack/message-router';
-import type { Bot } from 'koack/types';
+import { RTM_EVENTS } from 'koack/src/bot';
+import type { Bot } from 'koack/src/bot';
+import messageRouter from 'koack/src/message-router';
 
 const loggerMiddleware = ({ event }) => console.log(event);
 
