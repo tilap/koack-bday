@@ -22,3 +22,10 @@ const server = new Server({
 });
 
 server.listen({ port: Number(process.env.PORT) || 3000 });
+
+const close = async () => {
+  await server.stop();
+  process.exit(0);
+};
+process.on('SIGINT', close);
+process.on('SIGTERM', close);

@@ -13,12 +13,11 @@ pobBabel.watch().then(emitter => {
   emitter.on('changed', () => {
     if (_restartTimeout) clearTimeout(_restartTimeout);
     _restartTimeout = setTimeout(() => {
-        daemonBot.restart();
-    }, 3000);
+      daemonBot.restart();
+    }, 300);
   });
 
   process.on('exit', code => {
-    daemonWebserver.stop();
-    daemonTwitter.stop();
+    daemonBot.stop();
   });
 });
