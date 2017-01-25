@@ -17,6 +17,9 @@ if (!process.env.SLACK_CLIENTSECRET) {
 if (!process.env.SLACK_POOL_SIZE) {
   throw new Error('Missing env configuration', { key: 'SLACK_POOL_SIZE' });
 }
+if (!process.env.SLACK_SCOPE) {
+  throw new Error('Missing env configuration', { key: 'SLACK_SCOPE' });
+}
 
 const pool = new _koack.Pool({
   size: Number(process.env.SLACK_POOL_SIZE),
@@ -25,7 +28,7 @@ const pool = new _koack.Pool({
 
 const server = new _koack.Server({
   pool,
-  scopes: ['bot'],
+  scopes: process.env.SLACK_SCOPE.split(','),
   slackClient: {
     clientID: process.env.SLACK_CLIENTID,
     clientSecret: process.env.SLACK_CLIENTSECRET
