@@ -17,10 +17,7 @@ pobBabel.watch().then(emitter => {
     }, 300);
   });
 
-  const close = async () => {
-    await daemonBot.stop();
-    process.exit(0);
-  };
+  const close = daemonBot.stop().then(() => process.exit(0));
   process.on('SIGINT', close);
   process.on('SIGTERM', close);
 });
