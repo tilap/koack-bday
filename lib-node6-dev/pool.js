@@ -1,5 +1,9 @@
 'use strict';
 
+var _assert = require('assert');
+
+var _assert2 = _interopRequireDefault(_assert);
+
 var _koack = require('koack');
 
 var _memory = require('koack/storages/memory');
@@ -8,18 +12,7 @@ var _memory2 = _interopRequireDefault(_memory);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-if (!process.env.SLACK_CLIENTID) {
-  throw new Error('Missing env configuration', { key: 'SLACK_CLIENTID' });
-}
-if (!process.env.SLACK_CLIENTSECRET) {
-  throw new Error('Missing env configuration', { key: 'SLACK_CLIENTSECRET' });
-}
-if (!process.env.SLACK_POOL_SIZE) {
-  throw new Error('Missing env configuration', { key: 'SLACK_POOL_SIZE' });
-}
-if (!process.env.SLACK_SCOPE) {
-  throw new Error('Missing env configuration', { key: 'SLACK_SCOPE' });
-}
+['SLACK_CLIENTID', 'SLACK_CLIENTSECRET', 'SLACK_POOL_SIZE', 'SLACK_SCOPE'].map(envVar => (0, _assert2.default)(process.env[envVar], `Missing env configuration ${envVar}`));
 
 const pool = new _koack.Pool({
   size: Number(process.env.SLACK_POOL_SIZE),
